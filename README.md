@@ -3,7 +3,7 @@
 ### By: Yusuf Alshaikh and Hussain alhakeem
 ***
   ### *Description*
-   website for users who want sell there products 
+   website for users who want to sell there products
 ***
 ### *Technologies Used*
 * EJS
