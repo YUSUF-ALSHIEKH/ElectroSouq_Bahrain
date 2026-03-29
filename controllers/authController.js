@@ -20,6 +20,30 @@ const registerUser = async (req, res) => {
   }
 }
 
+const signInUser = async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email })
+    if (!user) {
+      return res.send(
+        "No user has been registered with that email. Please sign up!"
+      )
+    }
+    const validPassword = await bcrypt.compare(req.body.password, user.password)
+
+    if (!validPassword) {
+      return res.send("Incorrect password! Please try again.")
+    }
+
+    req.session.user = { email: user.email, _id: user._id }
+    req.session.save(() => {
+      res.redirect(`/users/${user._id}`)
+    })
+  } catch (error) {
+    console.error("⚠️ An error has occurred signing in a user!", error.message)
+  }
+}
+
 module.exports = {
   registerUser,
+  signInUser,
 }
