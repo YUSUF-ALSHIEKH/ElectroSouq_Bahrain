@@ -39,8 +39,12 @@ app.use(
   })
 )
 app.use(middleware.passUserToView)
-app.use(authRouter)
-app.use(userRouter)
+app.use("/auth", authRouter)
+app.use("/users", userRouter)
+
+app.get("/", (req, res) => {
+  res.render("index.ejs")
+})
 
 app.listen(PORT, () => {
   console.log(`💻 server is cooking ${PORT} ....  `)

@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
     }
     const hashedPass = await bcrypt.hash(req.body.password, 12)
 
-    await User.create({ ...req.body, password: hashedPassword })
+    await User.create({ ...req.body, password: hashedPass })
 
     res.render("./auth/thanks.ejs")
   } catch (error) {
