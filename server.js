@@ -20,8 +20,8 @@ const app = express()
 
 const middleware = require("./middleware")
 
-const authRouter = require("./router/authRouter")
-const userRouter = require("./router/userRouter")
+const authRouter = require("./routes/authRouter")
+const userRouter = require("./routes/userRouter")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
