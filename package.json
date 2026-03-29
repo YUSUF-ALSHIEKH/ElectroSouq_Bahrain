@@ -1,0 +1,33 @@
+{
+  "name": "electrosouq_bahrain",
+  "version": "1.0.0",
+  "description": "***\r   ### *Description*\r    website for users who want sell there products \r ***\r ### *Technologies Used*\r * EJS\r * JS\r * CSS\r * Mongoose\r * Express\r ***\r ### *Future Update*\r - [] complete design HTML\r - [] complete style CSS\r - [] complete game functions (JS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YUSUF-ALSHIEKH/ElectroSouq_Bahrain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/YUSUF-ALSHIEKH/ElectroSouq_Bahrain/issues"
+  },
+  "homepage": "https://github.com/YUSUF-ALSHIEKH/ElectroSouq_Bahrain#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^6.0.0",
+    "dotenv": "^17.3.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^9.2.3",
+    "morgan": "^1.10.1"
+  }
+}
