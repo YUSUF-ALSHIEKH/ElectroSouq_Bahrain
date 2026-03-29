@@ -3,15 +3,7 @@
 ### By: Yusuf Alshaikh and Hussain alhakeem
 ***
   ### *Description*
-<<<<<<< HEAD
    website for users who want to sell there products
-=======
-   website for users who want sell there electrical products
-  ### The HomePage
-  ![Image](./images/Screenshot%202026-02-26%20230931.png)
-  ### ProductsPage
-  ![Image](./images/Screenshot%202026-02-26%20230951.png)
->>>>>>> f0d8e87859dd6b14cfb7e7b393663c606747b0c3
 ***
 ### *Entity Relationship Diagram*
 - one user---create--> many comment
