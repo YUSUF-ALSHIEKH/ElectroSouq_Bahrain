@@ -22,6 +22,7 @@ const middleware = require("./middleware")
 
 const authRouter = require("./routes/authRouter")
 const userRouter = require("./routes/userRouter")
+const productRouter = require("./routes/productRouter")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -41,6 +42,7 @@ app.use(
 app.use(middleware.passUserToView)
 app.use("/auth", authRouter)
 app.use("/users", userRouter)
+app.use("/products", productRouter)
 
 app.get("/", (req, res) => {
   res.render("index.ejs")
