@@ -7,6 +7,8 @@ router.post("/", productController.createProduct)
 router.get("/new", (req, res) => {
   res.render("./products/new.ejs")
 })
+router.post("/", productController.createProduct)
+router.get("/:id", productController.getProductById)
 router.get("/home", (req, res) => {
   res.render("./products/home.ejs")
 })
