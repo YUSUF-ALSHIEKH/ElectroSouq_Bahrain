@@ -7,5 +7,6 @@ router.get("/new", (req, res) => {
   res.render("./products/new.ejs")
 })
 router.post("/", productController.createProduct)
+router.get("/:id", productController.getProductById)
 
 module.exports = router

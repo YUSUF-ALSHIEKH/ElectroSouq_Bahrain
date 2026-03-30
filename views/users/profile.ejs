@@ -1,6 +1,14 @@
 <%- include('../partials/header.ejs') %>
 
+
 <h2><%= user.first %> <%= user.last %>'s Profile</h2>
 <img src="<%= user.picture %>" alt="Profile Picture" width="150" />
+
+<h3>Products :</h3>
+<ul>
+  <% user.products.forEach(product => { %>
+    <li><a href="/products/<%= product._id %>"><%= product.title %></a></li>
+  <% }) %>
+</ul>
 
 <%- include('../partials/footer.ejs') %>
