@@ -48,6 +48,14 @@ app.get("/", (req, res) => {
   res.render("index.ejs")
 })
 
+app.get("/home", (req, res) => {
+  if (req.session.user) {
+    res.render("home.ejs", { user: req.session.user })
+  } else {
+    res.redirect("/auth/sign-in")
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`💻 server is cooking ${PORT} ....  `)
 })
