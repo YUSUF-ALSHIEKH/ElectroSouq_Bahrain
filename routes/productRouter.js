@@ -3,12 +3,13 @@ const router = express.Router()
 
 const productController = require("../controllers/productController")
 
+router.get("/new", (req, res) => {
+  res.render("./products/new.ejs")
+})
+router.get("/home", (req, res) => {
+  res.render("./products/home.ejs")
+})
 router.post("/", productController.createProduct)
-router.get("/new", (req, res) => {
-  res.render("./products/new.ejs")
-})
-router.get("/new", (req, res) => {
-  res.render("./products/new.ejs")
-})
+router.get("/:id", productController.getProductById)
 
 module.exports = router
