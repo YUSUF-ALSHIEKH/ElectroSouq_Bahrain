@@ -1,6 +1,10 @@
 <%- include('../partials/header.ejs') %>
 
 <h2><%= user.first %> <%= user.last %>'s Profile</h2>
+<% if(user.picture){%>
 <img src="<%= user.picture %>" alt="Profile Picture" width="150" />
 
+<%} else {%>
+<img src="/Pictures/download.png" alt="Profile Picture" width="150" />
+<%} %>
 <%- include('../partials/footer.ejs') %>
