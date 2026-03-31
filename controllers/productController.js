@@ -25,10 +25,16 @@ const updateProductById = async (req, res) => {
     res.redirect(`/products/${product._id}`)
   } catch (error) {
     console.error(
-      ":warning: An error has occurred updating a product!!",
+      ":warning: An error has occurred updating a product!",
       error.message
     )
   }
+}
+const getEditForm = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id)
+    res.render("products/edit.ejs", { product })
+  } catch (error) {}
 }
 
 const deleteProductById = async (req, res) => {
@@ -47,4 +53,5 @@ module.exports = {
   getProductById,
   updateProductById,
   deleteProductById,
+  getEditForm,
 }
