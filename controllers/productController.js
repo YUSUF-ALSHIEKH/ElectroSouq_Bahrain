@@ -11,7 +11,7 @@ const createProduct = async (req, res) => {
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id)
-    res.render(`./products/show.ejs, ${product._id}`)
+    res.render("./products/show.ejs", { product })
   } catch (error) {
     console.error("⚠️ An error has occurred getting a product!", error.message)
   }
