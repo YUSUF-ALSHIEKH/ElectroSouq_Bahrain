@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+
+<h2>Edit Product: <%= product.title %></h2>
+
+<form action="/products/<%= product._id %>?_method=PUT" method="POST">
+
+  <label for="title">Title</label>
+  <input type="text" name="title" value="<%= product.title %>" required />
+
+  <label for="description">Description</label>
+  <textarea name="description" required><%= product.description %></textarea>
+
+  <label for="image">Image URL</label>
+  <input type="text" name="image" value="<%= product.image %>" />
+
+  <label for="category">Category</label>
+  <select name="category" id="category" required>
+    <option value="Pcs & Laptops" <%= product.category === 'Pcs & Laptops' ? 'selected' : '' %>>Pcs & Laptops</option>
+    <option value="Consoles" <%= product.category === 'Consoles' ? 'selected' : '' %>>Consoles</option>
+    <option value="Mobile & Tablets" <%= product.category === 'Mobile & Tablets' ? 'selected' : '' %>>Mobile & Tablets</option>
+  </select>
+
+  <label for="price">Price</label>
+  <input type="text" name="price" value="<%= product.price %>" />
+
+  <button type="submit">Update Product</button>
+  <a href="/products/<%= product._id %>/edit">Cancel</a>
+</form>
+
+<%- include('../partials/footer.ejs') %>

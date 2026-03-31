@@ -1,8 +1,20 @@
-<%- include('../partials/header.ejs') %> <% console.log(product.author._id) %>
+<%- include('../partials/header.ejs') %>
+
+<% console.log(product.author._id) %>
+
 <% console.log(user._id) %>
 
 <h2><%= product.title %></h2>
 <img src="<%= product.image %>" alt="<%= product.title %>" width="300" />
 <p><%= product.description %></p>
+
+<% if (user._id === product.author._id.toString()) { %>
+
+<form action="/products/<%= product._id %>/edit">
+<button>Edit</button>
+</form>
+
+
+<% } %>
 
 <%- include('../partials/footer.ejs') %>

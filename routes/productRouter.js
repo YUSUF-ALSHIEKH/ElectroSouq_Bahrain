@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router()
+const Product = require("../models/Product")
 
 const productController = require("../controllers/productController")
 
@@ -21,5 +22,10 @@ router.get("/mobile", (req, res) => {
 })
 router.post("/", productController.createProduct)
 router.get("/:id", productController.getProductById)
-
+router.put("/:id", productController.updateProductById)
+router.delete("/:id", productController.deleteProductById)
+router.get("/:id/edit", async (req, res) => {
+  const product = await Product.findById(req.params.id)
+  res.render("./products/edit.ejs", { product })
+})
 module.exports = router
