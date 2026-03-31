@@ -3,8 +3,9 @@ const Comment = require("../models/Comment")
 
 const getAllCommentById = async (req, res) => {
   try {
-    const comment = await Comment.findById(req.params.id)
-    res.render("./comments/new.ejs", { comment })
+    const product = await Product.findById(req.params.id)
+
+    res.render("./comments/new.ejs", { product })
   } catch (error) {
     res.status(404).json({
       message: "⚠️ Error showing New comment Page!",
@@ -15,8 +16,8 @@ const getAllCommentById = async (req, res) => {
 
 const createComment = async (req, res) => {
   try {
-    const product = await Product.create(req.body)
-    res.redirect(`/comments/${product._id}`)
+    await Comment.create(req.body)
+    res.redirect(`/products/${req.body.product}`)
   } catch (error) {
     res
       .status(500)
