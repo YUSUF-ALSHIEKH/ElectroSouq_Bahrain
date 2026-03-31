@@ -9,6 +9,16 @@ router.get("/new", (req, res) => {
 router.get("/home", (req, res) => {
   res.render("./products/home.ejs")
 })
+
+router.get("/Pcs&Laptops", (req, res) => {
+  res.render("./products/pc.ejs")
+})
+router.get("/console", (req, res) => {
+  res.render("./products/console.ejs")
+})
+router.get("/mobile", (req, res) => {
+  res.render("./products/mobile.ejs")
+})
 router.post("/", productController.createProduct)
 router.get("/:id", productController.getProductById)
 
