@@ -23,7 +23,10 @@
 <% } %>
 
 <form action="/comments/<%= product._id %>">
-  <button>comments</button>
+  <button>Create Comment</button>
 </form>
+<%comments.forEach(comment=>{%>
+    <p><%= comment.description%></p>
+  <%})%>
 
 <%- include('../partials/footer.ejs') %>

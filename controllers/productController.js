@@ -1,5 +1,5 @@
 const Product = require("../models/Product.js")
-
+const Comment = require("../models/Comment")
 const createProduct = async (req, res) => {
   try {
     const product = await Product.create(req.body)
@@ -11,7 +11,8 @@ const createProduct = async (req, res) => {
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id)
-    res.render("./products/show.ejs", { product })
+    const comments = await Comment.find({ product: req.params.id })
+    res.render("./products/show.ejs", { product, comments })
   } catch (error) {
     console.error("⚠️ An error has occurred getting a product!", error.message)
   }
