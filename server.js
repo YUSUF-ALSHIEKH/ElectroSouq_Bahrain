@@ -23,6 +23,7 @@ const middleware = require("./middleware")
 const authRouter = require("./routes/authRouter")
 const userRouter = require("./routes/userRouter")
 const productRouter = require("./routes/productRouter")
+const commentRouter = require("./routes/commentRouter")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -43,17 +44,10 @@ app.use(middleware.passUserToView)
 app.use("/auth", authRouter)
 app.use("/users", userRouter)
 app.use("/products", productRouter)
+app.use("commnets", commentRouter)
 
 app.get("/", (req, res) => {
   res.render("index.ejs")
-})
-
-app.get("/home", (req, res) => {
-  if (req.session.user) {
-    res.render("home.ejs", { user: req.session.user })
-  } else {
-    res.redirect("/auth/sign-in")
-  }
 })
 
 app.listen(PORT, () => {
