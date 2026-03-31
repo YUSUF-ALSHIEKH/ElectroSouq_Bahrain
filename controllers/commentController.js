@@ -7,4 +7,6 @@ const getAllComment = async (req, res) => {
   } catch (error) {}
 }
 
-module.exports = {}
+module.exports = {
+  getAllComment,
+}
