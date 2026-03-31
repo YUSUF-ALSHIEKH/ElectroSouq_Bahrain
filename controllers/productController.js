@@ -25,7 +25,7 @@ const updateProductById = async (req, res) => {
     res.redirect(`/products/${product._id}`)
   } catch (error) {
     console.error(
-      ":warning: An error has occurred updating a product!",
+      ":warning: An error has occurred updating a product!!",
       error.message
     )
   }
