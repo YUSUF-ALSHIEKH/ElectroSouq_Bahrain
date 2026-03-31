@@ -33,7 +33,7 @@ const updateProductById = async (req, res) => {
 const deleteProductById = async (req, res) => {
   try {
     await Product.findByIdAndDelete(req.params.id)
-    res.render("./products/confirmDelet.ejs")
+    res.render("./products/confirmDelete.ejs")
   } catch (error) {
     console.error("⚠️ An error has occurred deleting a product!", error.message)
   }
