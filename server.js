@@ -44,7 +44,7 @@ app.use(middleware.passUserToView)
 app.use("/auth", authRouter)
 app.use("/users", userRouter)
 app.use("/products", productRouter)
-app.use("commnets", commentRouter)
+app.use("/commnets", commentRouter)
 
 app.get("/", (req, res) => {
   res.render("index.ejs")
