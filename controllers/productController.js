@@ -30,6 +30,12 @@ const updateProductById = async (req, res) => {
     )
   }
 }
+const getEditForm = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id)
+    res.render("products/edit.ejs", { product })
+  } catch (error) {}
+}
 
 const deleteProductById = async (req, res) => {
   try {
@@ -47,4 +53,5 @@ module.exports = {
   getProductById,
   updateProductById,
   deleteProductById,
+  getEditForm,
 }

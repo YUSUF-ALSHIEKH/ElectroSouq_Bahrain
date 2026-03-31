@@ -10,9 +10,9 @@
 
 <% if (user._id === product.author._id.toString()) { %>
 
-<form action="/products/<%= product._id %>/edit">
+<a href="/products/<%= product._id %>/edit">
 <button>Edit</button>
-</form>
+</a>
 
 
 <% } %>
