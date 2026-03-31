@@ -10,10 +10,13 @@
 
 <% if (user._id === product.author._id.toString()) { %>
 
-<a href="/products/<%= product._id %>/edit">
-<button>Edit</button>
-</a>
+<form action="/products/<%= product._id %>/edit">
+  <button>Edit</button>
+</form>
 
+<form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+  <button type="submit">Delete</button>
+</form>
 
 <% } %>
 
