@@ -14,7 +14,9 @@ const getUserByID = async (req, res) => {
     }
 
     res.render("./users/profile.ejs", { user: data })
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error fetching user profile", error.message)
+  }
 }
 
 module.exports = {
