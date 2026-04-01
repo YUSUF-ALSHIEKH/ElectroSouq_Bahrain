@@ -10,7 +10,7 @@
       <% products.forEach(product => { %>
         <div class="product-card">
           <h3><%= product.title %></h3>
-         <a href="/products/<%=product._id%>"> <img src="<%= product.image %>" alt="<%= product.title %>"></a>
+          <a href="/products/<%=product._id%>"> <img src="<%= product.image %>" alt="<%= product.title %>"></a>
 
 
 
@@ -19,7 +19,7 @@
 
     <% } else { %>
       <div class="no-products">
-        <p>No mobile products found.<p>
+        <p>No Console products found.<p>
       </div>
     <% } %>
   </div>

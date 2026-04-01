@@ -27,8 +27,14 @@
 <form action="/comments/<%= product._id %>">
   <button>Create Comment</button>
 </form>
+<%if (comments.length===0){%>
+  <p>NO Comments</p>
+  <% } else { %>
 <%comments.forEach(comment=>{%>
+  <div>
     <p><%= comment.description%></p>
+    <hr>
+  </div>
   <%})%>
-
+<%}%>
 <%- include('../partials/footer.ejs') %>

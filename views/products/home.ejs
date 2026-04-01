@@ -1,26 +1,53 @@
-<%- include('../partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElectroSouq_Bahrain</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <nav>
+
+      <% if (!user) { %>
+
+      <a href="/auth/sign-up">Sign Up</a>
+      <a href="/auth/sign-in">Sign In</a>
+
+      <% } else { %>
+<a href="/products/new">New Product</a>
+      <a href="/users/<%= user._id %>">My Profile</a>
+      <a href="/auth/sign-out">Sign Out</a>
+
+
+      <% } %>
+
+    </nav>
+    <main>
+
 <h1>ElectroSouq_Bahrain</h1>
 
 <h3>choose the category</h3>
 
 <div class="category-item">
-  <h3><a href="/products/mobile">Mobile & Tablets</a></h3>
-
-  <img src="/Pictures/office.jpg" alt="image" />
+  <h3>Mobile & Tablets</h3>
+  <a href="/products/mobile"><img src="/Pictures/office.jpg" alt="image" /></a>
 </div>
 <div class="category-item">
-  <h3><a href="/products/Pcs&Laptops">Pcs & Laptops</a></h3>
-  <img
-    src="https://www-file.honor.com/content/dam/honor/sa-en/blog/2024/difference-between-laptop-and-desktop/pc-3.jpg"
-    alt="image"
-    style="width: 5"
-  />
+  <h3>Pcs & Laptops</h3>
+  <a href="/products/Pcs&Laptops">
+    <img
+      src="https://www-file.honor.com/content/dam/honor/sa-en/blog/2024/difference-between-laptop-and-desktop/pc-3.jpg"
+      alt="image"
+      style="width: 5"
+  /></a>
 </div>
 <div class="category-item">
-  <h3><a href="/products/console">Consoles</a></h3>
-  <img
-    src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2020/04/Consoles-Cropped.jpg?w=1600&h=900&fit=crop"
-    alt="image"
-  />
+  <h3>Consoles</h3>
+  <a href="/products/console"
+    ><img
+      src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2020/04/Consoles-Cropped.jpg?w=1600&h=900&fit=crop"
+      alt="image"
+  /></a>
 </div>
 <%- include('../partials/footer.ejs') %>
