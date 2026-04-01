@@ -11,7 +11,9 @@ const createProduct = async (req, res) => {
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id)
-    const comments = await Comment.find({ product: req.params.id })
+    const comments = await Comment.find({ product: req.params.id }).populate(
+      "author"
+    )
     res.render("./products/show.ejs", { product, comments })
   } catch (error) {
     console.error("⚠️ An error has occurred getting a product!", error.message)
