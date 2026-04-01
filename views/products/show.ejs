@@ -6,7 +6,9 @@
 
 <h2><%= product.title %></h2>
 <img src="<%= product.image %>" alt="<%= product.title %>" width="300" />
-<p><%= product.description %></p>
+<p>Description:<%= product.description %></p>
+<p>Price:<%= product.price %>BD</p>
+<p>Number:+973<%= product.number%></p>
 
 <% if (user._id === product.author._id.toString()) { %>
 
