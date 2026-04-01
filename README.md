@@ -37,7 +37,6 @@ ElectroSouq_Bahrain is a specialized C2C (Consumer-to-Consumer) platform built f
 #### Future Roadmap
 - [ ] Search & Filter: Add a search bar to find products by name or price range.
 - [ ] Dark Mode: Implement a theme toggle for better night-time browsing.
-- [ ] add users name on comment
 
 ### *Trello*
 https://trello.com/invite/b/69a01db7fa712b05a15e5256/ATTI053975534b42dfa9cc0756958ca8a645592D6393/electrosouq-bahrain
