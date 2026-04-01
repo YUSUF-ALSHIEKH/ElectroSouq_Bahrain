@@ -39,9 +39,39 @@ const deleteProductById = async (req, res) => {
     console.error("⚠️ An error has occurred deleting a product!", error.message)
   }
 }
+const getMobileProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ category: "Mobile & Tablets" })
+    res.render("./products/mobile.ejs", { products })
+  } catch (error) {
+    console.error("Error fetching mobile products:", error.message)
+    res.status(500).send("Internal Server Error")
+  }
+}
+const getConsolesProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ category: "Consoles" })
+    res.render("./products/console.ejs", { products })
+  } catch (error) {
+    console.error("Error fetching mobile products:", error.message)
+    res.status(500).send("Internal Server Error")
+  }
+}
+const getPcsProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ category: "Pcs & Laptops" })
+    res.render("./products/pc.ejs", { products })
+  } catch (error) {
+    console.error("Error fetching mobile products:", error.message)
+    res.status(500).send("Internal Server Error")
+  }
+}
 module.exports = {
   createProduct,
   getProductById,
   updateProductById,
   deleteProductById,
+  getMobileProducts,
+  getConsolesProducts,
+  getPcsProducts,
 }
