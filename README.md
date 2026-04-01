@@ -21,6 +21,6 @@
 ***
 ### *Future Update*
 - [X] complete server and mongoose connected
-- [] complete router and controller
-- [] complete style CSS (last)
+- [X] complete router and controller
+- [X] complete style CSS (last)
 

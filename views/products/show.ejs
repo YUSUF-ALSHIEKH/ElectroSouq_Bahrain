@@ -28,12 +28,14 @@
   <button>Create Comment</button>
 </form>
 <%if (comments.length===0){%>
-  <p>NO Comments</p>
-  <% } else { %>
-<%comments.forEach(comment=>{%>
   <div>
+  <h3>NO Comments</h3>
+  </div>
+  <% } else { %>
+    <h3>Comments</h3>
+<%comments.forEach(comment=>{%>
+  <div style="border: 2px; border-top: 2px solid #000; margin-top: 5px;">
     <p><%= comment.description%></p>
-    <hr>
   </div>
   <%})%>
 <%}%>
