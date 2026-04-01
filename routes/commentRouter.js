@@ -1,16 +1,10 @@
 const express = require("express")
 const router = express.Router()
 const Comment = require("../models/Comment")
-const middleware = require("../middleware")
 const commentController = require("../controllers/commentController")
 const Product = require("../models/Product")
 
 router.post("/", commentController.createComment)
-
-router.get("/new/:id", async (req, res) => {
-  const product = await Product.findById(req.params.id)
-  res.render("./comments/new.ejs", { product })
-})
 
 router.get("/:id", async (req, res) => {
   const product = await Product.findById(req.params.id)
