@@ -9,7 +9,7 @@ ElectroSouq_Bahrain is a specialized C2C (Consumer-to-Consumer) platform built f
 - one user---create--> many comment
 - one user ---sells--> many Product
 - one Product ---have--> many comment
-![Image](./images/Blank%20diagram.png)
+![Image](./images/Blank%20diagram%20(1).png)
 
 ### *Screenshots*
 - home page
